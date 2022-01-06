@@ -1,4 +1,4 @@
-namespace TransportApp
+namespace SwissConnections
 {
     internal static class Program
     {

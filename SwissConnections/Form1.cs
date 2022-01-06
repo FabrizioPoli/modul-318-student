@@ -1,4 +1,4 @@
-namespace TransportApp
+namespace SwissConnections
 {
     public partial class Form1 : Form
     {
