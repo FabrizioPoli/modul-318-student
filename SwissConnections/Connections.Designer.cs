@@ -58,6 +58,7 @@
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.to = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnShareConnections = new System.Windows.Forms.Button();
             this.tabNavigation.SuspendLayout();
             this.tabDepartureBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationBoard)).BeginInit();
@@ -160,6 +161,7 @@
             // 
             // tabConnections
             // 
+            this.tabConnections.Controls.Add(this.btnShareConnections);
             this.tabConnections.Controls.Add(this.btnSwitchLocations);
             this.tabConnections.Controls.Add(this.dtpTimePicker);
             this.tabConnections.Controls.Add(this.dtpConnectionDate);
@@ -308,6 +310,17 @@
             this.to.HeaderText = "To";
             this.to.Name = "to";
             // 
+            // btnShareConnections
+            // 
+            this.btnShareConnections.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShareConnections.Location = new System.Drawing.Point(556, 14);
+            this.btnShareConnections.Name = "btnShareConnections";
+            this.btnShareConnections.Size = new System.Drawing.Size(75, 23);
+            this.btnShareConnections.TabIndex = 10;
+            this.btnShareConnections.Text = "Share";
+            this.btnShareConnections.UseVisualStyleBackColor = true;
+            this.btnShareConnections.Click += new System.EventHandler(this.btnShareConnections_Click);
+            // 
             // swissConnections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -362,6 +375,7 @@
         private DataGridViewTextBoxColumn fromStation;
         private DataGridViewTextBoxColumn toStation;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private Button btnShareConnections;
     }
 
 }

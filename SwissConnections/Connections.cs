@@ -132,5 +132,11 @@ namespace SwissConnections
                 cmbSearchDepartures.Items.Add("No Result");
             }
         }
+
+        private void btnShareConnections_Click(object sender, EventArgs e)
+        {
+            Email email = new Email();
+            email.ShowDialog();
+        }
     }
 }
