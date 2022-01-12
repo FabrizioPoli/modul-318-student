@@ -38,7 +38,6 @@
             this.fromStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConnections = new System.Windows.Forms.TabPage();
             this.btnSwitchLocations = new System.Windows.Forms.Button();
             this.dtpTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -122,6 +121,7 @@
             this.cmbSearchDepartures.Name = "cmbSearchDepartures";
             this.cmbSearchDepartures.Size = new System.Drawing.Size(156, 23);
             this.cmbSearchDepartures.TabIndex = 3;
+            this.cmbSearchDepartures.Text = "From";
             this.cmbSearchDepartures.Click += new System.EventHandler(this.cmbSearchDepartures_Click);
             // 
             // dgvStationBoard
@@ -131,19 +131,18 @@
             this.dgvStationBoard.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fromStation,
             this.toStation,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn1});
             this.dgvStationBoard.Location = new System.Drawing.Point(16, 55);
             this.dgvStationBoard.Name = "dgvStationBoard";
             this.dgvStationBoard.RowTemplate.Height = 25;
-            this.dgvStationBoard.Size = new System.Drawing.Size(523, 174);
+            this.dgvStationBoard.Size = new System.Drawing.Size(424, 395);
             this.dgvStationBoard.TabIndex = 2;
             // 
             // fromStation
             // 
             this.fromStation.HeaderText = "From";
             this.fromStation.Name = "fromStation";
-            this.fromStation.Width = 120;
+            this.fromStation.Width = 140;
             // 
             // toStation
             // 
@@ -156,12 +155,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Departure";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Arrival";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 120;
             // 
             // tabConnections
             // 
@@ -237,7 +230,7 @@
             this.dgvConnections.Location = new System.Drawing.Point(16, 114);
             this.dgvConnections.Name = "dgvConnections";
             this.dgvConnections.RowTemplate.Height = 25;
-            this.dgvConnections.Size = new System.Drawing.Size(524, 156);
+            this.dgvConnections.Size = new System.Drawing.Size(524, 151);
             this.dgvConnections.TabIndex = 3;
             // 
             // fromLocation
@@ -361,11 +354,10 @@
         private DateTimePicker dtpConnectionDate;
         private DateTimePicker dtpTimePicker;
         private Button btnSearchStations;
+        private Button btnSwitchLocations;
         private DataGridViewTextBoxColumn fromStation;
         private DataGridViewTextBoxColumn toStation;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private Button btnSwitchLocations;
     }
 
 }

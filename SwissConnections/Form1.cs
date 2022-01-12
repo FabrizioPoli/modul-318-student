@@ -17,7 +17,6 @@ namespace SwissConnections
          * Stationboard
          ***************************/
 
-
         //Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
         private void cmbSearchDepartures_Click(object sender, EventArgs e)
         {
@@ -28,14 +27,20 @@ namespace SwissConnections
         //von in einer Combobox engetragener Station.
         private void btnSearchStations_Click(object sender, EventArgs e)
         {
-            StationBoardRoot stationBoardRoot = new StationBoardRoot();
-            stationBoardRoot = transport.GetStationBoard(cmbSearchDepartures.Text, "id");
-            foreach (var element in stationBoardRoot.Entries)
+            try 
+            { 
+                StationBoardRoot stationBoardRoot = new StationBoardRoot();
+                stationBoardRoot = transport.GetStationBoard(cmbSearchDepartures.Text, "id");
+                foreach (var element in stationBoardRoot.Entries)
+                {
+                    dgvStationBoard.Rows.Add(cmbSearchDepartures.Text, element.To, DateTime.Parse(element.Stop.Departure.ToString()).ToShortTimeString(), element.Number);
+                }
+            } catch (ArgumentNullException)
             {
-                DataGridViewRow row1 = (DataGridViewRow)dgvConnections.Rows[0].Clone();
-                row1.Cells[0].Value = element.Name;
+                MessageBox.Show("Please type in a location!");
             }
         }
+
 
         /****************************
          * Connection search
@@ -80,7 +85,6 @@ namespace SwissConnections
             }
         }
 
-
         //Bei diesem Event werden die Eingetragenen Stationen von "From" und "To" vertauscht.
         private void btnSwitchLocations_Click(object sender, EventArgs e)
         {
@@ -89,6 +93,7 @@ namespace SwissConnections
             cmbFromLocation.Text = toLocation;
             cmbToLocation.Text = fromLocation;
         }
+
 
         /****************************
          * General functions
