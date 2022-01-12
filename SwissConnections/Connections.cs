@@ -46,13 +46,13 @@ namespace SwissConnections
          * Connection search
          ***************************/
 
-        ///Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
+        //Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
         private void cmbFromLocation_Click(object sender, EventArgs e)
         {
             comboBox_On_TextChange(cmbFromLocation);
         }
 
-        ///Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
+        //Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
         private void cmbToLocation_Click(object sender, EventArgs e)
         {
             comboBox_On_TextChange(cmbToLocation);
