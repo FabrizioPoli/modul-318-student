@@ -35,7 +35,12 @@
             this.btnSearchStations = new System.Windows.Forms.Button();
             this.cmbSearchDepartures = new System.Windows.Forms.ComboBox();
             this.dgvStationBoard = new System.Windows.Forms.DataGridView();
+            this.fromStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConnections = new System.Windows.Forms.TabPage();
+            this.btnSwitchLocations = new System.Windows.Forms.Button();
             this.dtpTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dtpConnectionDate = new System.Windows.Forms.DateTimePicker();
             this.cmbFromLocation = new System.Windows.Forms.ComboBox();
@@ -54,10 +59,6 @@
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.to = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fromStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabNavigation.SuspendLayout();
             this.tabDepartureBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationBoard)).BeginInit();
@@ -132,14 +133,39 @@
             this.toStation,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvStationBoard.Location = new System.Drawing.Point(16, 112);
+            this.dgvStationBoard.Location = new System.Drawing.Point(16, 55);
             this.dgvStationBoard.Name = "dgvStationBoard";
             this.dgvStationBoard.RowTemplate.Height = 25;
             this.dgvStationBoard.Size = new System.Drawing.Size(523, 174);
             this.dgvStationBoard.TabIndex = 2;
             // 
+            // fromStation
+            // 
+            this.fromStation.HeaderText = "From";
+            this.fromStation.Name = "fromStation";
+            this.fromStation.Width = 120;
+            // 
+            // toStation
+            // 
+            this.toStation.HeaderText = "To";
+            this.toStation.Name = "toStation";
+            this.toStation.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Departure";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Arrival";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 120;
+            // 
             // tabConnections
             // 
+            this.tabConnections.Controls.Add(this.btnSwitchLocations);
             this.tabConnections.Controls.Add(this.dtpTimePicker);
             this.tabConnections.Controls.Add(this.dtpConnectionDate);
             this.tabConnections.Controls.Add(this.cmbFromLocation);
@@ -153,6 +179,16 @@
             this.tabConnections.TabIndex = 1;
             this.tabConnections.Text = "Connections";
             this.tabConnections.UseVisualStyleBackColor = true;
+            // 
+            // btnSwitchLocations
+            // 
+            this.btnSwitchLocations.Location = new System.Drawing.Point(167, 13);
+            this.btnSwitchLocations.Name = "btnSwitchLocations";
+            this.btnSwitchLocations.Size = new System.Drawing.Size(47, 23);
+            this.btnSwitchLocations.TabIndex = 9;
+            this.btnSwitchLocations.Text = "<-->";
+            this.btnSwitchLocations.UseVisualStyleBackColor = true;
+            this.btnSwitchLocations.Click += new System.EventHandler(this.btnSwitchLocations_Click);
             // 
             // dtpTimePicker
             // 
@@ -183,7 +219,7 @@
             // cmbToLocation
             // 
             this.cmbToLocation.FormattingEnabled = true;
-            this.cmbToLocation.Location = new System.Drawing.Point(167, 12);
+            this.cmbToLocation.Location = new System.Drawing.Point(220, 14);
             this.cmbToLocation.Name = "cmbToLocation";
             this.cmbToLocation.Size = new System.Drawing.Size(161, 23);
             this.cmbToLocation.TabIndex = 4;
@@ -230,7 +266,7 @@
             // 
             // btnSearchConnections
             // 
-            this.btnSearchConnections.Location = new System.Drawing.Point(349, 12);
+            this.btnSearchConnections.Location = new System.Drawing.Point(387, 13);
             this.btnSearchConnections.Name = "btnSearchConnections";
             this.btnSearchConnections.Size = new System.Drawing.Size(75, 23);
             this.btnSearchConnections.TabIndex = 2;
@@ -274,30 +310,6 @@
             // 
             this.to.HeaderText = "To";
             this.to.Name = "to";
-            // 
-            // fromStation
-            // 
-            this.fromStation.HeaderText = "From";
-            this.fromStation.Name = "fromStation";
-            this.fromStation.Width = 120;
-            // 
-            // toStation
-            // 
-            this.toStation.HeaderText = "To";
-            this.toStation.Name = "toStation";
-            this.toStation.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Departure";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Arrival";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 120;
             // 
             // LandingPage
             // 
@@ -353,6 +365,7 @@
         private DataGridViewTextBoxColumn toStation;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Button btnSwitchLocations;
     }
 
 }

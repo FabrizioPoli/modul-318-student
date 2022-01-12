@@ -6,6 +6,7 @@ namespace SwissConnections
 {
     public partial class LandingPage : Form
     {
+        //Aufruf auf die API
         ITransport transport = new Transport();
         public LandingPage()
         {
@@ -16,35 +17,44 @@ namespace SwissConnections
          * Stationboard
          ***************************/
 
+
+        //Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
         private void cmbSearchDepartures_Click(object sender, EventArgs e)
         {
             comboBox_On_TextChange(cmbSearchDepartures);
         }
 
+        //Beim Click-Event von diesem Button wird eine Liste mit Abfahrten ausgegeben
+        //von in einer Combobox engetragener Station.
         private void btnSearchStations_Click(object sender, EventArgs e)
         {
             StationBoardRoot stationBoardRoot = new StationBoardRoot();
-            stationBoardRoot = transport.GetStationBoard(cmbSearchDepartures.Text, "");
+            stationBoardRoot = transport.GetStationBoard(cmbSearchDepartures.Text, "id");
             foreach (var element in stationBoardRoot.Entries)
             {
                 DataGridViewRow row1 = (DataGridViewRow)dgvConnections.Rows[0].Clone();
                 row1.Cells[0].Value = element.Name;
             }
         }
-        
+
         /****************************
          * Connection search
          ***************************/
 
+        ///Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
         private void cmbFromLocation_Click(object sender, EventArgs e)
         {
             comboBox_On_TextChange(cmbFromLocation);
         }
+
+        ///Beim anklicken der Combobox wird die comboBox_On_TextChange() aufgerufen.
         private void cmbToLocation_Click(object sender, EventArgs e)
         {
             comboBox_On_TextChange(cmbToLocation);
         }
 
+        //Wenn man auf den "Search"-Button klickt werden passend zu den eingetragenen Daten, Verbindungen angezeigt.
+        //Das Try-Catch fängt auf falls der User auf "Search" klickt und noch nichts eingetragen hat.
         private void btnSearchConnections_Click(object sender, EventArgs e)
         {
             if (cmbFromLocation.Text != null && cmbToLocation.Text != null)
@@ -64,16 +74,28 @@ namespace SwissConnections
                     }
                 } catch (ArgumentNullException)
                 {
-                    MessageBox.Show("Please type in a location!"); 
+                    MessageBox.Show("Please type in a location!");
                 }
                 
             }
+        }
+
+
+        //Bei diesem Event werden die Eingetragenen Stationen von "From" und "To" vertauscht.
+        private void btnSwitchLocations_Click(object sender, EventArgs e)
+        {
+            string fromLocation = cmbFromLocation.Text;
+            string toLocation = cmbToLocation.Text;
+            cmbFromLocation.Text = toLocation;
+            cmbToLocation.Text = fromLocation;
         }
 
         /****************************
          * General functions
          ***************************/
 
+        //Diese Funktion sorgt für das Löschen der Items aus den Comboboxen
+        //und ruft die "search"-Funktion auf.
         public void comboBox_On_TextChange(ComboBox cmb)
         {
             foreach (var item in new ArrayList(cmb.Items))
@@ -84,6 +106,8 @@ namespace SwissConnections
             search(cmb);
         }
 
+        //Diese Funktion ist dafür zuständig vorschläge der Stationen zu machen.
+        //Die Exception fängt ab wenn der User keinen vorhandenen Namen eingibt.
         public void search(ComboBox cmb)
         {
             try
