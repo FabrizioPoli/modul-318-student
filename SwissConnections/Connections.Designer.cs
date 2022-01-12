@@ -104,6 +104,7 @@
             // 
             // btnSearchStations
             // 
+            this.btnSearchStations.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchStations.Location = new System.Drawing.Point(187, 14);
             this.btnSearchStations.Name = "btnSearchStations";
             this.btnSearchStations.Size = new System.Drawing.Size(75, 23);
@@ -116,6 +117,7 @@
             // 
             this.cmbSearchDepartures.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbSearchDepartures.CausesValidation = false;
+            this.cmbSearchDepartures.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSearchDepartures.FormattingEnabled = true;
             this.cmbSearchDepartures.Location = new System.Drawing.Point(16, 14);
             this.cmbSearchDepartures.Name = "cmbSearchDepartures";
@@ -175,6 +177,7 @@
             // 
             // btnSwitchLocations
             // 
+            this.btnSwitchLocations.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSwitchLocations.Location = new System.Drawing.Point(167, 13);
             this.btnSwitchLocations.Name = "btnSwitchLocations";
             this.btnSwitchLocations.Size = new System.Drawing.Size(47, 23);
@@ -259,6 +262,7 @@
             // 
             // btnSearchConnections
             // 
+            this.btnSearchConnections.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchConnections.Location = new System.Drawing.Point(387, 13);
             this.btnSearchConnections.Name = "btnSearchConnections";
             this.btnSearchConnections.Size = new System.Drawing.Size(75, 23);
