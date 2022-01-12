@@ -4,11 +4,11 @@ using System.Collections;
 
 namespace SwissConnections
 {
-    public partial class LandingPage : Form
+    public partial class swissConnections : Form
     {
         //Aufruf auf die API
         ITransport transport = new Transport();
-        public LandingPage()
+        public swissConnections()
         {
             InitializeComponent();
         }

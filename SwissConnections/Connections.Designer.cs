@@ -1,6 +1,6 @@
 ﻿namespace SwissConnections
 {
-    partial class LandingPage
+    partial class swissConnections
     {
         /// <summary>
         ///  Required designer variable.
@@ -304,14 +304,14 @@
             this.to.HeaderText = "To";
             this.to.Name = "to";
             // 
-            // LandingPage
+            // swissConnections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 572);
             this.Controls.Add(this.tabNavigation);
             this.Controls.Add(this.landingPageTitle);
-            this.Name = "LandingPage";
+            this.Name = "swissConnections";
             this.Text = "Swiss Connections";
             this.tabNavigation.ResumeLayout(false);
             this.tabDepartureBoard.ResumeLayout(false);
